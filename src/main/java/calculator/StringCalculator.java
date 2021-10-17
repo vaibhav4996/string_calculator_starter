@@ -30,7 +30,37 @@ class StringCalculator {
         }
 	
 
-	private char getCustomDelimiter(String string) {
+        if (!negatives.isEmpty()) {
+            throw new IllegalArgumentException(
+                "negatives not allowed " + String.join(",", negatives));
+        }
+        return total;
+    }
+
+    private boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    private char getCustomDelimiter(String line) {
+        if (line == null || line.isEmpty()) {
+            return ',';
+        }
+        if (isNumeric(line)) {
+            return ',';
+        }
+        if (line.length() == 1) {
+            return line.charAt(0);
+        }
+        return ',';
+    }
+
+	public Integer add(String string) {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
+}
