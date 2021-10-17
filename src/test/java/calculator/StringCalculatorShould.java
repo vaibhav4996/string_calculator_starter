@@ -17,4 +17,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
+ //   ----------------
+    @Test
+    public void emptyStringShouldReturnZero() {
+        StringCalculator sut = new StringCalculator();
+        assertEquals(0, sut.calculate(""));
+    }
 }
