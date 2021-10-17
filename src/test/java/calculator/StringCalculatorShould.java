@@ -44,5 +44,29 @@ class StringCalculatorShould {
         StringCalculator sut = new StringCalculator();
         assertEquals(45, sut.calculate("1,2,3,4,5,6,7,8,9"));
     }
+    @Test
+    public void supportNewLineAsSeparator() {
+        StringCalculator sut = new StringCalculator();
+        assertEquals(6, sut.calculate("1\n2,3"));
+    }
+   
+    @Test
+    public void supportForCustomDelimiter() {
+        StringCalculator sut = new StringCalculator();
+        assertEquals(10, sut.calculate(";\n1;2;3;4"));
+    }
     
+   
+    @Test
+    public void negativeNotSupported() {
+        StringCalculator sut = new StringCalculator();
+        try {
+            sut.calculate("-1;4");
+            fail("exception should have been thrown");
+        }
+        catch (IllegalArgumentException e) {
+            assertEquals("negatives not allowed -1", e.getMessage());
+        }
+    }
+}
 }
