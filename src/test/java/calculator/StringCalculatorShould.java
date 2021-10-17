@@ -23,4 +23,10 @@ class StringCalculatorShould {
         StringCalculator sut = new StringCalculator();
         assertEquals(0, sut.calculate(""));
     }
+    
+    @Test
+    public void oneNumberShouldReturnItseft() {
+        StringCalculator sut = new StringCalculator();
+        assertEquals(3, sut.calculate("3"));
+    }
 }

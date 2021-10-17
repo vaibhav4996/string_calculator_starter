@@ -59,8 +59,5 @@ class StringCalculator {
         return ',';
     }
 
-	public Integer add(String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
